@@ -1,5 +1,9 @@
 # Arch Setup
 
+## Screenshots
+
+<img width="1918" height="1079" alt="image" src="https://github.com/user-attachments/assets/e98b7263-2485-4048-b258-622aeacac04b" />
+
 ## Install
 
 ### Install yay (AUR helper)
