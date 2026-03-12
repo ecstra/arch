@@ -13,8 +13,6 @@ cd yay
 makepkg -si
 ```
 
----
-
 ### Hyprland Packages
 
 ```bash
@@ -26,8 +24,6 @@ sudo pacman -S \
   waybar \
   wl-clipboard
 ```
-
----
 
 ### System / Graphics
 
@@ -44,8 +40,6 @@ sudo pacman -S \
   vulkan-utils
 ```
 
----
-
 ### Development Tools
 
 ```bash
@@ -58,16 +52,12 @@ sudo pacman -S \
   unzip
 ```
 
----
-
 ### File Manager and Browser
 
 ```bash
 sudo pacman -S nautilus
 yay -S google-chrome
 ```
-
----
 
 ### Fonts
 
@@ -99,8 +89,6 @@ fc-cache -fv
 cd
 rm -rf "$tmp"
 ```
-
----
 
 ## Configs
 
@@ -136,14 +124,12 @@ Contents:
 Terminal: `kitty`  
 Shell: `zsh`
 
----
-
 ### Install Zsh + Oh My Zsh
 
 ```bash
 sudo pacman -S zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-````
+```
 
 Set Zsh as default shell:
 
@@ -152,8 +138,6 @@ chsh -s $(which zsh)
 ```
 
 Restart the terminal.
-
----
 
 ### Zsh Plugins
 
@@ -189,8 +173,6 @@ plugins=(
 )
 ```
 
----
-
 ### Powerlevel10k Theme
 
 Install theme:
@@ -208,8 +190,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 Restart the terminal and run the guided configuration.
 
----
-
 ### Completion Setup
 
 Add **before** `source $ZSH/oh-my-zsh.sh` in `~/.zshrc`:
@@ -218,8 +198,6 @@ Add **before** `source $ZSH/oh-my-zsh.sh` in `~/.zshrc`:
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 autoload -U compinit && compinit
 ```
-
----
 
 ### Custom Configuration
 
@@ -253,9 +231,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 ```
-
----
-
 ### VS Code
 
 Set **zsh** as the default integrated shell in VS Code.
