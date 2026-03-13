@@ -224,6 +224,22 @@ zstyle ':completion:*' menu no
 
 Set **zsh** as the default integrated shell in VS Code.
 
+### Nano Syntax Hilighting
+
+Edit nanorc file:
+
+```zsh
+sudo nano /etc/nanorc
+```
+
+Add:
+
+```
+include "/usr/share/nano/*.nanorc"
+set tabsize 4
+set tabstospaces
+```
+
 ## Development Tools
 
 Code Editor:
