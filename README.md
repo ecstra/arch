@@ -3,15 +3,25 @@
 ## Screenshots
 
 <img width="1918" height="1079" alt="image" src="https://github.com/user-attachments/assets/e98b7263-2485-4048-b258-622aeacac04b" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/686e5868-466c-48a2-8378-54df28548c07" />
 
 ## Install
+
+### Development Tools
+
+```bash
+sudo pacman -S \
+  base-devel \
+  git \
+  neovim \
+  wget \
+  curl \
+  unzip
+```
 
 ### Install yay (AUR helper)
 
 ```bash
-sudo pacman -Syu
-sudo pacman -S --needed base-devel git
-
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
@@ -42,18 +52,6 @@ sudo pacman -S \
   vulkan-tools \
   vulkan-radeon \
   vulkan-utils
-```
-
-### Development Tools
-
-```bash
-sudo pacman -S \
-  base-devel \
-  git \
-  neovim \
-  wget \
-  curl \
-  unzip
 ```
 
 ### File Manager and Browser
