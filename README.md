@@ -73,6 +73,7 @@ sudo pacman -S
   noto-fonts \
   noto-fonts-emoji \
   ttf-jetbrains-mono-nerd \
+  ttf-jetbrains-mono \
   ttf-fantasque-nerd
 
 fc-cache -fv
@@ -225,6 +226,12 @@ Set **zsh** as the default integrated shell in VS Code.
 
 ## Development Tools
 
+Code Editor:
+
+```zsh
+sudo pacman -S code
+```
+
 Python, Pip & UV:
 
 ```zsh
@@ -240,4 +247,12 @@ curl -o- https://fnm.vercel.app/install | bash
 curl -fsSL https://bun.sh/install | bash
 source ~/.zshrc
 fnm install 24
+```
+
+Rust:
+
+```zsh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+echo '. "$HOME/.cargo/env"' >> ~/.zshrc
+source ~/.zshrc
 ```
