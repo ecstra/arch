@@ -43,9 +43,9 @@
   },
 
   "clock": {
-    "format": "{:%H:%M}",
-    "format-alt": "{:%A, %d %B}",
-    "tooltip-format": "<tt><small>{calendar}</small></tt>"
+    "format": "{:L%B | %a %d, %Y | %I:%M %p}",
+    "format-alt": "{:L%a %b %d, %G}",
+    "tooltip": false
   },
 
   "cpu": {
@@ -54,7 +54,7 @@
   },
 
   "memory": {
-    "format": "󰍛 {}%",
+    "format": "󰾆 {}%",
     "interval": 2
   },
 
