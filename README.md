@@ -51,7 +51,10 @@ sudo pacman -S \
   polkit-kde-agent \
   vulkan-tools \
   vulkan-radeon \
-  vulkan-utils
+  vulkan-utils \
+  vulkan-mesa-layers \
+  libva-mesa-driver \
+  nwg-look
 ```
 
 ### File Manager and Browser
@@ -64,32 +67,15 @@ yay -S google-chrome
 ### Fonts
 
 ```bash
-cd ~/Downloads
+sudo pacman -S
+  ttf-dejavu \
+  ttf-liberation \
+  noto-fonts \
+  noto-fonts-emoji \
+  ttf-jetbrains-mono-nerd \
+  ttf-fantasque-nerd
 
-# Create temp dir
-tmp=$(mktemp -d)
-cd "$tmp"
-
-# Download fonts
-wget -q https://github.com/belluzj/fantasque-sans/releases/download/v1.8.0/FantasqueSansMono-Normal.zip
-wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip
-
-# Extract
-unzip -q FantasqueSansMono-Normal.zip
-unzip -q JetBrainsMono.zip
-
-# Install fonts
-mkdir -p ~/.local/share/fonts
-
-mv JetBrainsMono*.ttf ~/.local/share/fonts/
-mv TTF/FantasqueSansMono*.ttf ~/.local/share/fonts/
-
-# Refresh font cache
 fc-cache -fv
-
-# Cleanup
-cd
-rm -rf "$tmp"
 ```
 
 ## Configs
@@ -237,3 +223,21 @@ zstyle ':completion:*' menu no
 
 Set **zsh** as the default integrated shell in VS Code.
 
+## Development Tools
+
+Python, Pip & UV:
+
+```zsh
+sudo pacman -Syu python
+sudo pacman -S python-pip
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+Node & Bun:
+
+```zsh
+curl -o- https://fnm.vercel.app/install | bash
+curl -fsSL https://bun.sh/install | bash
+source ~/.zshrc
+fnm install 24
+```
