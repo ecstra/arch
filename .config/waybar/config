@@ -2,7 +2,7 @@
   "layer": "top",
   "position": "top",
   "height": 34,
-  "spacing": 16,
+  "spacing": 4,
 
   "modules-left": [
     "hyprland/workspaces",
@@ -16,6 +16,7 @@
   "modules-right": [
     "cpu",
     "memory",
+    "bluetooth",
     "network",
     "pulseaudio",
     "battery",
@@ -58,11 +59,22 @@
     "interval": 2
   },
 
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "󰂲",
+    "format-connected": "󰂱 {device_alias}",
+    "tooltip-format": "{controller_alias}\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "on-click": "blueman-manager"
+  },
+
   "network": {
     "format-wifi": " {signalStrength}%",
     "format-ethernet": "󰈀 Wired",
     "format-disconnected": "󰖪",
-    "tooltip-format": "{essid}"
+    "tooltip-format": "{essid}",
+    "on-click": "nm-connection-editor"
   },
 
   "pulseaudio": {
@@ -71,7 +83,9 @@
     "format-icons": {
       "default": ["", "", ""]
     },
-    "scroll-step": 5
+    "scroll-step": 5,
+    "on-click": "pavucontrol",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
   },
 
   "battery": {
@@ -87,6 +101,6 @@
 
   "tray": {
     "icon-size": 16,
-    "spacing": 12
+    "spacing": 8
   }
 }
