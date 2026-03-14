@@ -71,9 +71,10 @@ tooltip label {
 #network,
 #pulseaudio,
 #battery,
+#custom-notification,
 #tray {
   color: #e0e0e0;
-  padding: 0 6px; /* Reduced from 10px to bring icons closer */
+  padding: 0 6px;
 }
 
 /* --- SUBTLE ALERTS --- */
