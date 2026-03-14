@@ -111,13 +111,14 @@
 /* The track of the switch (darkened/dimmed when off) */
 .widget-dnd > switch {
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
 }
 
 /* The track when turned on (Unified Blue Theme) */
 .widget-dnd > switch:checked {
-    background: #82aaff; 
-    border: 1px solid #82aaff;
+    background: #ff954f; 
+    border: 2px solid #ff6600;
 }
 
 /* The actual button inside the switch */
