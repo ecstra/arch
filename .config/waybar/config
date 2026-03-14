@@ -20,18 +20,21 @@
     "network",
     "pulseaudio",
     "battery",
+    "custom/notification",
     "tray"
   ],
 
   "hyprland/workspaces": {
     "format": "{icon}",
     "on-click": "activate",
+    "all-outputs": false,
     "format-icons": {
       "default": "",
       "urgent": ""
     },
     "persistent-workspaces": {
-      "*": 5
+      "HDMI-A-1": [1, 2, 3, 4, 5],
+      "eDP-1": [6, 7, 8, 9, 10]
     }
   },
 
@@ -102,5 +105,26 @@
   "tray": {
     "icon-size": 16,
     "spacing": 8
+  },
+  
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": " <span foreground='#f07178'><sup></sup></span>",
+      "none": " ",
+      "dnd-notification": " <span foreground='#f07178'><sup></sup></span>",
+      "dnd-none": " ",
+      "inhibited-notification": " <span foreground='#f07178'><sup></sup></span>",
+      "inhibited-none": " ",
+      "dnd-inhibited-notification": " <span foreground='#f07178'><sup></sup></span>",
+      "dnd-inhibited-none": " "
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
   }
 }
