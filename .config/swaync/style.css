@@ -1,0 +1,157 @@
+/* --- GLOBAL RESET --- */
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    border-radius: 0px !important;
+    box-shadow: none !important;
+    background-image: none !important;
+}
+
+/* --- THE MAIN PANEL --- */
+.control-center {
+    background: rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+    border: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0;
+}
+
+/* --- STRIP THE NESTED WRAPPERS --- */
+/* Forces margins and padding to 0 to prevent background stacking */
+.notification-row,
+.notification-background {
+    background: transparent !important;
+    border: none !important;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+/* --- THE ACTUAL NOTIFICATION CARD --- */
+.notification {
+    background: rgba(0, 0, 0, 0.4); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    padding: 6px;
+    box-shadow: none;
+    transition: background 0.2s ease;
+}
+
+/* --- HOVER EFFECTS --- */
+/* Highlights the entire box instead of just the text content */
+.notification:hover {
+    background: rgba(0, 0, 0, 0.3); 
+}
+
+.notification-default-action:hover {
+    background: transparent; 
+}
+
+/* --- TEXT COLORS --- */
+.notification-content .summary {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.notification-content .body {
+    color: #e0e0e0;
+    font-size: 13px;
+}
+
+.notification-content .time {
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 400;
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+.notification-content .image {
+    /* Specifically styles images within notifications */
+    border-radius: 4px;
+    margin: 5px;
+}
+
+/* --- CLOSE BUTTON --- */
+.close-button {
+    background: transparent;
+    color: #ffffff;
+}
+
+.close-button:hover {
+    background: #f07178; 
+    color: #11111b;
+    cursor: pointer;
+}
+
+/* --- WIDGET: CLEAR ALL BUTTON --- */
+.widget-title {
+    color: #ffffff;
+    background: transparent;
+    padding: 12px 12px 0px 12px;
+}
+
+.widget-title > button {
+    background: transparent;
+    color: #e0e0e0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 4px 8px;
+    transition: 0.2s;
+}
+
+.widget-title > button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+/* --- WIDGET: DO NOT DISTURB SWITCH --- */
+.widget-dnd {
+    color: #ffffff;
+    background: transparent;
+    padding: 12px;
+}
+
+/* The track of the switch (darkened/dimmed when off) */
+.widget-dnd > switch {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* The track when turned on (Unified Blue Theme) */
+.widget-dnd > switch:checked {
+    background: #82aaff; 
+    border: 1px solid #82aaff;
+}
+
+/* The actual button inside the switch */
+.widget-dnd > switch slider {
+    background: #ffffff;
+    border: none;
+}
+
+/* --- NOTIFICATION GROUPS (STACKING) --- */
+.notification-group {
+    background: transparent;
+}
+
+.notification-group-headers {
+    color: #aaaaaa;
+    font-size: 13px;
+    padding-top: 8px;
+}
+
+/* The Expand/Collapse buttons */
+.notification-group-buttons > button {
+    background: transparent;
+    color: #e0e0e0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0px 8px 8px 8px;
+    transition: 0.2s;
+}
+
+.notification-group-buttons > button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+/* Bumps opacity to 0.9 for the top notification in a collapsed stack */
+.notification-group.collapsed .notification-row:last-child .notification {
+    background: rgba(0, 0, 0, 0.6);
+}
