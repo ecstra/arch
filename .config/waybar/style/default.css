@@ -15,6 +15,18 @@ window#waybar {
   color: #ffffff;
 }
 
+/* --- TOOLTIP FIX --- */
+tooltip {
+  background: rgba(10, 10, 10, 0.9); /* Dark, slightly transparent background */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle outline */
+  border-radius: 8px;
+}
+
+tooltip label {
+  color: #e0e0e0;
+  padding: 8px; /* Restores padding inside the hover box */
+}
+
 /* --- FIX EDGE HUGGING --- */
 .modules-left {
   padding-left: 20px;
@@ -27,23 +39,22 @@ window#waybar {
 /* --- COLORED DOT WORKSPACES --- */
 #workspaces button {
   padding: 0 6px;
-  font-size: 14px; /* Slightly larger for clean dots */
-  opacity: 0.3; /* Dim inactive dots so they don't distract */
+  font-size: 14px;
+  opacity: 0.3;
   transition: opacity 0.2s ease, text-shadow 0.2s ease;
 }
 
 #workspaces button.active {
-  opacity: 1; /* Full brightness when active */
-  text-shadow: 0 0 4px currentColor; /* Subtle glow on the active dot */
+  opacity: 1;
+  text-shadow: 0 0 4px currentColor;
 }
 
-/* Assigning clean, distinct colors to the first 5 dots */
-#workspaces button:nth-child(1) { color: #82aaff; } /* Blue */
-#workspaces button:nth-child(2) { color: #c3e88d; } /* Green */
-#workspaces button:nth-child(3) { color: #ffcb6b; } /* Yellow */
-#workspaces button:nth-child(4) { color: #f78c6c; } /* Orange */
-#workspaces button:nth-child(5) { color: #c792ea; } /* Purple */
-#workspaces button:nth-child(n+6) { color: #ffffff; } /* White for extras */
+#workspaces button:nth-child(1) { color: #82aaff; }
+#workspaces button:nth-child(2) { color: #c3e88d; }
+#workspaces button:nth-child(3) { color: #ffcb6b; }
+#workspaces button:nth-child(4) { color: #f78c6c; }
+#workspaces button:nth-child(5) { color: #c792ea; }
+#workspaces button:nth-child(n+6) { color: #ffffff; }
 
 /* --- WINDOW TITLE --- */
 #window {
@@ -52,16 +63,17 @@ window#waybar {
   font-weight: 400;
 }
 
-/* --- MODULE SPACING --- */
+/* --- TIGHTER MODULE SPACING --- */
 #clock,
 #cpu,
 #memory,
+#bluetooth,
 #network,
 #pulseaudio,
 #battery,
 #tray {
   color: #e0e0e0;
-  padding: 0 10px;
+  padding: 0 6px; /* Reduced from 10px to bring icons closer */
 }
 
 /* --- SUBTLE ALERTS --- */
