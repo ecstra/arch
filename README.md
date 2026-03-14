@@ -52,8 +52,7 @@ sudo pacman -S \
   vulkan-tools \
   vulkan-radeon \
   vulkan-mesa-layers \
-  libva-mesa-driver \
-  nwg-look
+  libva-mesa-driver
 ```
 
 ### File Manager and Browser
@@ -105,7 +104,7 @@ fc-cache -fv
 
 Screenshot Tools:
 
-```
+```bash
 sudo pacman -S \
   grim \
   slurp
@@ -113,7 +112,7 @@ sudo pacman -S \
 
 Controls:
 
-```
+```bash
 sudo pacman -S \
   pavucontrol \
   nm-connection-editor \
@@ -121,7 +120,8 @@ sudo pacman -S \
 ```
 
 Launcher:
-```
+
+```bash
 yay -S vicinae
 ```
 
@@ -152,7 +152,8 @@ nvidia-laptop-power-cfg (Ampere power management):
 git clone https://gitlab.com/asus-linux/nvidia-laptop-power-cfg.git
 cd nvidia-laptop-power-cfg
 makepkg -sfi
-cd .. & rm -rf nvidia-laptop-power-cfg
+cd ..
+rm -rf nvidia-laptop-power-cfg
 sudo systemctl enable nvidia-suspend.service nvidia-hibernate.service nvidia-resume.service
 sudo systemctl enable --now nvidia-powerd
 ```
@@ -374,4 +375,31 @@ Rust:
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 echo '. "$HOME/.cargo/env"' >> ~/.zshrc
 source ~/.zshrc
+```
+
+## Theme
+
+Theme Setter:
+
+```
+sudo pacman -S \
+  nwg-look \
+  xdg-desktop-portal-gtk
+```
+
+Cursor & Icons:
+
+```
+yay -S bibata-cursor-theme
+sudo pacman -S papirus-icon-theme
+```
+
+Notification:
+
+```
+# Disable Default Notification
+systemctl --user disable --now dunst
+
+# Install Swaync
+sudo pacman -S swaync
 ```
