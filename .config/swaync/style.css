@@ -153,6 +153,9 @@
 }
 
 /* Bumps opacity to 0.9 for the top notification in a collapsed stack */
+.notification-group .notification {
+    background: rgba(0, 0, 0, 0.4); /* The magic 'window tint' for blur */
+}
 .notification-group.collapsed .notification-row:last-child .notification {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.6); 
 }
