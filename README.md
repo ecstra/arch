@@ -82,6 +82,15 @@ debtap google-chrome-stable_137.0.7151.119-1_amd64.deb
 
 # install the converted package
 sudo pacman -U -dd google-chrome-stable-137.0.7151.119-1-x86_64.pkg.tar.zst
+
+# delete auto-update cron-job
+sudo rm -rf /opt/google/chrome/cron
+```
+
+Edit `/etc/pacman.conf`:
+
+```
+IgnorePkg = google-chrome-stable google-chrome
 ```
 
 
