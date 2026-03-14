@@ -53,13 +53,15 @@
   },
 
   "cpu": {
-    "format": " {usage}%",
-    "interval": 2
+    "format": "  {usage}%",
+    "interval": 2,
+    "tooltip-format": "CPU Usage: {usage}%"
   },
 
   "memory": {
-    "format": "󰾆 {}%",
-    "interval": 2
+    "format": "  {}%",
+    "interval": 2,
+    "tooltip-format": "RAM Usage: {}%"
   },
 
   "bluetooth": {
@@ -72,11 +74,12 @@
     "on-click": "blueman-manager"
   },
 
-  "network": {
-    "format-wifi": " {signalStrength}%",
-    "format-ethernet": "󰈀 Wired",
+"network": {
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰈀",
     "format-disconnected": "󰖪",
-    "tooltip-format": "{essid}",
+    "tooltip-format": "{essid} ({signalStrength}%)",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
     "on-click": "nm-connection-editor"
   },
 
