@@ -125,34 +125,90 @@ Launcher:
 yay -S vicinae
 ```
 
-## Configs
+## Device Essentials
 
-Wallpapers are stored in:
+### Nvidia
 
-```
-~/.wallpapers
-```
-
-Configuration files are stored in:
+Drivers:
 
 ```
-~/.config
+# 1. Install nvidia drivers
+sudo pacman -S \
+  nvidia-dkms \
+  nvidia-utils \
+  nvidia-prime \
+  linux-headers
+
+# 2. Rebuild initramfs
+sudo mkinitcpio -P
+
+# 3. Blacklist nouveau
+echo "blacklist nouveau" | sudo tee /etc/modprobe.d/blacklist-nouveau.conf
 ```
 
-Contents:
+nvidia-laptop-power-cfg (Ampere power management):
 
-1. `chrome-flags.conf`
-   Used to manage Chrome flags.
+```
+git clone https://gitlab.com/asus-linux/nvidia-laptop-power-cfg.git
+cd nvidia-laptop-power-cfg
+makepkg -sfi
+cd .. & rm -rf nvidia-laptop-power-cfg
+sudo systemctl enable nvidia-suspend.service nvidia-hibernate.service nvidia-resume.service
+sudo systemctl enable --now nvidia-powerd
+```
 
-2. `hypr/`
-   Contains configuration for:
+Create `/etc/modprobe.d/nvidia.conf` and put:
 
-   * Hyprland
-   * Hyprlock
-   * Hyprpaper
+```conf
+options nvidia_drm modeset=1
+options nvidia NVreg_EnableGpuFirmware=0 NVreg_EnableS0ixPowerManagement=1 NVreg_DynamicPowerManagement=0x02
+```
 
-3. `kitty/`
-   Contains Kitty terminal configuration.
+### Asus
+
+Firmware & UCode:
+
+```bash
+sudo pacman -S \
+  linux-firmware \
+  amd-ucode
+```
+
+Keys:
+
+```bash
+sudo pacman-key --recv-keys 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35
+sudo pacman-key --finger 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35
+sudo pacman-key --lsign-key 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35
+sudo pacman-key --finger 8F654886F17D497FEFE3DB448B15A6B0E9A3FA35
+```
+
+Edit `/etc/pacman.conf` at end of file:
+
+```conf
+[g14]
+Server = https://arch.asus-linux.org
+```
+
+Update:
+
+```bash
+sudo pacman -Suy
+```
+
+Asus Control Center:
+
+```bash
+sudo pacman -S \
+  asusctl \
+  power-profiles-daemon \
+  supergfxctl \
+  rog-control-center
+
+sudo systemctl enable --now asusd
+sudo systemctl enable --now supergfxd
+systemctl enable --now power-profiles-daemon.service
+```
 
 ## Shell
 
