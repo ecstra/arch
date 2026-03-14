@@ -58,10 +58,33 @@ sudo pacman -S \
 
 ### File Manager and Browser
 
+File Manager:
+
 ```bash
 sudo pacman -S nautilus
-yay -S google-chrome
 ```
+
+Browser:
+```
+# install pacman utilities
+sudo pacman -S pacman-contrib
+
+# install debtap from AUR (tool to convert .deb packages to Arch packages)
+yay -S debtap
+
+# initialize debtap database (downloads Debian -> Arch dependency mapping)
+sudo debtap -u
+
+# download specific Chrome version (137) which still supports Manifest V2 extensions (for uBlock)
+wget https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_137.0.7151.119-1_amd64.deb
+
+# convert the Debian package into an Arch package (.pkg.tar.zst)
+debtap google-chrome-stable_137.0.7151.119-1_amd64.deb
+
+# install the converted package
+sudo pacman -U -dd google-chrome-stable-137.0.7151.119-1-x86_64.pkg.tar.zst
+```
+
 
 ### Fonts
 
@@ -76,6 +99,30 @@ sudo pacman -S \
   ttf-fantasque-nerd
 
 fc-cache -fv
+```
+
+### Workspace Essentials
+
+Screenshot Tools:
+
+```
+sudo pacman -S \
+  grim \
+  slurp
+```
+
+Controls:
+
+```
+sudo pacman -S \
+  pavucontrol \
+  nm-connection-editor \
+  blueman
+```
+
+Launcher:
+```
+yay -S vicinae
 ```
 
 ## Configs
@@ -244,7 +291,7 @@ set tabstospaces
 Code Editor:
 
 ```zsh
-sudo pacman -S code
+yay -S visual-studio-code-bin
 ```
 
 Python, Pip & UV:
@@ -253,6 +300,7 @@ Python, Pip & UV:
 sudo pacman -Syu python
 sudo pacman -S python-pip
 curl -LsSf https://astral.sh/uv/install.sh | sh
+source $HOME/.local/bin/env
 ```
 
 Node & Bun:
