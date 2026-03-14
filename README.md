@@ -51,7 +51,6 @@ sudo pacman -S \
   polkit-kde-agent \
   vulkan-tools \
   vulkan-radeon \
-  vulkan-utils \
   vulkan-mesa-layers \
   libva-mesa-driver \
   nwg-look
@@ -67,7 +66,7 @@ yay -S google-chrome
 ### Fonts
 
 ```bash
-sudo pacman -S
+sudo pacman -S \
   ttf-dejavu \
   ttf-liberation \
   noto-fonts \
