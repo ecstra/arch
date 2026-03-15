@@ -88,9 +88,12 @@
     "format": "{icon} {volume}%",
     "format-muted": "󰝟 Muted",
     "format-icons": {
-      "default": ["", "", ""]
+      "headphone": "󰋋",
+      "hands-free": "󰋎",
+      "headset": "󰋎",
+      "default": ["", "", " "]
     },
-    "scroll-step": 5,
+    "scroll-step": 2,
     "on-click": "pavucontrol",
     "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
   },
