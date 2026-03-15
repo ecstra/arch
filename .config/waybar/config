@@ -42,15 +42,28 @@
   "hyprland/window": {
     "format": "{class}",
     "max-length": 40,
+    "tooltip": true,
+    "tooltip-format": "{title}",
     "rewrite": {
       "": "Desktop"
     }
   },
 
-  "clock": {
+"clock": {
     "format": "{:L%B | %a %d, %Y | %I:%M %p}",
     "format-alt": "{:L%a %b %d, %G}",
-    "tooltip": false
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#89b4fa'><b>{}</b></span>",
+        "weekdays": "<span color='#a6e3a1'><b>{}</b></span>",
+        "days": "<span color='#bac2de'><b>{}</b></span>",
+        "today": "<span color='#f78c6c'><b><u>{}</u></b></span>"
+      }
+    }
   },
 
   "cpu": {
