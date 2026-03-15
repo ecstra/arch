@@ -50,7 +50,8 @@ Theme Setter:
 ```
 sudo pacman -S \
   nwg-look \
-  xdg-desktop-portal-gtk
+  xdg-desktop-portal-gtk \
+  xdg-desktop-portal-hyprland
 ```
 
 Cursor & Icons:
@@ -89,7 +90,6 @@ sudo pacman -S \
   vulkan-icd-loader \
   vulkan-virtio \
   egl-wayland \
-  xdg-desktop-portal-hyprland \
   polkit-kde-agent \
   vulkan-tools \
   vulkan-radeon \
