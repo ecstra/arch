@@ -20,8 +20,9 @@
     "network",
     "pulseaudio",
     "battery",
+    "group/tray",
     "custom/notification",
-    "tray"
+    "custom/power"
   ],
 
   "hyprland/workspaces": {
@@ -59,13 +60,13 @@
   },
 
   "memory": {
-    "format": "  {}%",
+    "format": "  {percentage}%",
     "interval": 2,
-    "tooltip-format": "RAM Usage: {}%"
+    "tooltip-format": "Memory: {used:0.1f}GiB / {total:0.1f}GiB\nSwap: {swapUsed:0.1f}GiB / {swapTotal:0.1f}GiB"
   },
 
   "bluetooth": {
-    "format": "",
+    "format": "󰂯",
     "format-disabled": "󰂲",
     "format-connected": "󰂱 {device_alias}",
     "tooltip-format": "{controller_alias}\n{num_connections} connected",
@@ -73,8 +74,8 @@
     "tooltip-format-enumerate-connected": "{device_alias}",
     "on-click": "blueman-manager"
   },
-
-"network": {
+  
+  "network": {
     "format-wifi": "{icon}",
     "format-ethernet": "󰈀",
     "format-disconnected": "󰖪",
@@ -99,17 +100,44 @@
       "warning": 20,
       "critical": 10
     },
+    "tooltip": false,
     "format": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
-    "format-icons": ["", "", "", "", ""]
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+  },
+
+  "group/tray": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "hidden",
+      "transition-left-to-right": false,
+      "click-to-reveal": true
+    },
+    "modules": [
+      "custom/system_tray",
+      "custom/separator",
+      "tray"
+    ]
+  },
+
+  "custom/system_tray": {
+    "format": "",
+    "tooltip": false
+  },
+
+  "custom/separator": {
+    "format": "|",
+    "tooltip": false
   },
 
   "tray": {
-    "icon-size": 16,
-    "spacing": 8
+    "icon-size": 14,
+    "spacing": 8,
+    "show-passive-items": true
   },
-  
+
   "custom/notification": {
     "tooltip": false,
     "format": "{icon}",
@@ -129,5 +157,11 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true
+  },
+
+  "custom/power": {
+    "format": " ",
+    "tooltip": false,
+    "on-click": "wlogout -n"
   }
 }
