@@ -4,30 +4,29 @@
   font-weight: 600;
   border: none;
   border-radius: 0;
-  background: none; /* Strictly no badges */
   min-height: 0;
   margin: 0;
   padding: 0;
 }
 
 window#waybar {
-  background: rgba(0, 0, 0, 0.4); /* Attached, blurred pure black */
+  background: rgba(0, 0, 0, 0.4);
   color: #ffffff;
 }
 
-/* --- TOOLTIP FIX --- */
+/* --- TOOLTIP --- */
 tooltip {
-  background: rgba(10, 10, 10, 0.9); /* Dark, slightly transparent background */
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle outline */
-  border-radius: 8px;
+  background: rgba(10, 10, 10, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
 }
 
 tooltip label {
   color: #e0e0e0;
-  padding: 8px; /* Restores padding inside the hover box */
+  padding: 6px;
 }
 
-/* --- FIX EDGE HUGGING --- */
+/* --- EDGE HUGGING FIX --- */
 .modules-left {
   padding-left: 20px;
 }
@@ -72,9 +71,33 @@ tooltip label {
 #pulseaudio,
 #battery,
 #custom-notification,
+#custom-system_tray,
+#custom-power,
 #tray {
   color: #e0e0e0;
   padding: 0 6px;
+}
+
+/* --- TRAY SPECIFIC Spacing --- */
+#custom-system_tray {
+  font-size: 14px;
+  color: #aaaaaa;
+  transition: color 0.2s ease;
+}
+
+#custom-system_tray:hover {
+  color: #ffffff;
+}
+
+#custom-separator {
+  color: rgba(255, 255, 255, 0.2);
+  padding-right: 10px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+#tray {
+  margin-left: -4px;
 }
 
 /* --- SUBTLE ALERTS --- */
@@ -88,7 +111,43 @@ tooltip label {
 }
 
 @keyframes blink {
-  to {
-    color: #e0e0e0;
-  }
+  to { color: #e0e0e0; }
+}
+
+/* --- MENU STYLING --- */
+window.background.popup,
+window.background.menu,
+decoration {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+menu {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 4px;
+  font-size: 12px;
+}
+
+menuitem {
+  color: #e0e0e0;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+menuitem:hover, 
+menuitem:selected {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+menuitem:disabled {
+  color: #666666;
+}
+
+menu separator {
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 2px 0;
 }
