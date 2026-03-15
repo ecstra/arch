@@ -16,7 +16,8 @@ sudo pacman -S \
   neovim \
   wget \
   curl \
-  unzip
+  unzip \
+  jq
 ```
 
 ### Install yay (AUR helper)
@@ -42,12 +43,42 @@ yay -S wlogout
 yay -S mission-center
 ```
 
+### Theme
 
-Fix Video Permissions:
+Theme Setter:
 
 ```
+sudo pacman -S \
+  nwg-look \
+  xdg-desktop-portal-gtk
+```
+
+Cursor & Icons:
+
+```
+yay -S bibata-cursor-theme
+sudo pacman -S papirus-icon-theme
+```
+
+Notification:
+
+```
+# Disable Default Notification
+systemctl --user disable --now dunst
+
+# Install Swaync
+sudo pacman -S swaync
+```
+
+On Screen Display:
+
+```
+# Fix Permissions
 sudo usermod -aG video $USER
 sudo udevadm control --reload-rules && sudo udevadm trigger
+
+# Install SwayOSD
+sudo pacman -S swayosd
 ```
 
 ### System / Graphics
@@ -394,31 +425,4 @@ Rust:
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 echo '. "$HOME/.cargo/env"' >> ~/.zshrc
 source ~/.zshrc
-```
-
-## Theme
-
-Theme Setter:
-
-```
-sudo pacman -S \
-  nwg-look \
-  xdg-desktop-portal-gtk
-```
-
-Cursor & Icons:
-
-```
-yay -S bibata-cursor-theme
-sudo pacman -S papirus-icon-theme
-```
-
-Notification:
-
-```
-# Disable Default Notification
-systemctl --user disable --now dunst
-
-# Install Swaync
-sudo pacman -S swaync
 ```
