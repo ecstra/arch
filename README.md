@@ -39,6 +39,7 @@ sudo pacman -S \
   wl-clipboard
 
 yay -S wlogout
+yay -S mission-center
 ```
 
 ### System / Graphics
@@ -94,7 +95,6 @@ Edit `/etc/pacman.conf`:
 ```
 IgnorePkg = google-chrome-stable google-chrome
 ```
-
 
 ### Fonts
 
