@@ -27,7 +27,7 @@ cd yay
 makepkg -si
 ```
 
-### Hyprland Packages
+### Hyprland Stuff
 
 ```bash
 sudo pacman -S \
@@ -40,6 +40,14 @@ sudo pacman -S \
 
 yay -S wlogout
 yay -S mission-center
+```
+
+
+Fix Video Permissions:
+
+```
+sudo usermod -aG video $USER
+sudo udevadm control --reload-rules && sudo udevadm trigger
 ```
 
 ### System / Graphics
