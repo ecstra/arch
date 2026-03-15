@@ -40,7 +40,15 @@ tooltip label {
   padding: 0 6px;
   font-size: 14px;
   opacity: 0.3;
+  background: transparent;
+  box-shadow: none;
   transition: opacity 0.2s ease, text-shadow 0.2s ease;
+}
+
+#workspaces button:hover {
+  background: transparent;
+  box-shadow: none;
+  opacity: 0.8;
 }
 
 #workspaces button.active {
