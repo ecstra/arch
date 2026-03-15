@@ -37,6 +37,8 @@ sudo pacman -S \
   hypridle \
   waybar \
   wl-clipboard
+
+yay -S wlogout
 ```
 
 ### System / Graphics
