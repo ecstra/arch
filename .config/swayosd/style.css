@@ -1,0 +1,46 @@
+/* Make the invisible parent window completely transparent */
+window {
+    background: transparent;
+}
+
+window#osd {
+    margin-top: 1800px;
+}
+
+
+/* The actual frosted glass pill */
+#container {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: none;               /* Removed the border */
+    border-radius: 999px;       /* Forces a perfect pill shape */
+    padding: 12px 24px;         /* Adjusted padding for a sleeker look */
+    margin-bottom: 12px;        /* Pushed much closer to the bottom edge */
+    box-shadow: none;
+}
+
+/* The Icon */
+image {
+    color: #fab387;
+    margin-right: 12px;
+}
+
+/* The Progress Bar Container */
+progressbar {
+    min-height: 8px;            /* Slightly thicker to match the pill aesthetic */
+    border-radius: 999px;
+}
+
+/* The empty part of the bar */
+progressbar > trough {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    min-height: 8px;
+    border: none;
+}
+
+/* The filled part of the bar (Warm Orange) */
+progressbar > trough > progress {
+    background-color: #fab387;  /* Catppuccin Peach/Orange */
+    border-radius: 999px;
+    min-height: 8px;
+}
